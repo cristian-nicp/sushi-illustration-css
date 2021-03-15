@@ -1,0 +1,132 @@
+:root{
+  --table-color:#d98636;
+  --chopstick-bottom-color:#c56d2f;
+  --chopstick-top-color:#fadea0;
+  --nori-color:#0e0405;
+  --rice-color:#e5e5df;
+  --salmon-sushi-color:#d37e5a;
+  --egg-sushi-color:#e5c45e;
+  --vegetables-sushi-color:#5a723e;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #363636;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.sushi-table{
+  display: grid;
+  position: relative;
+  grid-template: repeat(3,0.3fr) / repeat(3,1fr);
+  place-items: center;
+  /*grid-auto-flow:row;*/
+
+  width: 550px;
+  height: 400px;
+  background-color: var(--table-color);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 100 100'%3E%3Crect x='0' y='0' width='46' height='46' fill-opacity='0.6' fill='%23b36e2c'/%3E%3C/svg%3E");
+  border: 5px solid #7b4c1d;
+  border-radius: 42%;
+}
+
+.top-sushi-line,.middle-sushi-line,.bottom-sushi-line{
+  display: flex;
+  flex-direction: row;
+}
+
+.top-sushi-line{
+  grid-column: 2/3;
+  grid-row: 1/2;
+  align-self:flex-end
+}
+.middle-sushi-line{
+  grid-column: 2/3;
+  grid-row: 2/2;
+}
+
+.bottom-sushi-line{
+  grid-column: 2/3;
+  grid-row:3/4;
+  align-self: flex-start;
+}
+
+.sushi,.sushi-2,.sushi-3,.sushi-4,.sushi-5,.sushi-6,.sushi-7,.sushi-8{
+  width: 100px;
+  height: 100px;
+  border: 7px solid var(--nori-color);
+  border-radius: 50%;
+}
+
+.chop-stick::before{
+  content: "";
+  left: 72px;
+
+}
+
+.chop-stick,.chop-stick::before{
+  position: absolute;
+  height: 500px;
+  width: 14px;
+  transform: rotate(14deg);
+  background: linear-gradient(var(--chopstick-top-color),var(--chopstick-bottom-color));
+  border-top-left-radius:30px;
+  border-top-right-radius: 30px;
+}
+
+.chop-stick{
+  right:57px
+}
+
+
+.sushi-rice{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--rice-color);
+}
+
+.sushi-salmon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60%;
+  width: 60%;
+  background-color: var(--salmon-sushi-color);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='33' height='33' viewBox='0 0 120 120'%3E%3Cpolygon fill='%236b402e' fill-opacity='.1' points='120 0 120 60 90 30 60 0 0 0 0 0 60 60 0 120 60 120 90 90 120 60 120 0'/%3E%3C/svg%3E");
+  border-radius: 50%;
+}
+
+.sushi-egg{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 58%;
+  height: 58%;
+  background-color: var(--egg-sushi-color);
+  border-radius: 50%;
+}
+
+.sushi-vegetables{
+  width: 100%;
+  height: 50%;
+  background-color: var(--vegetables-sushi-color);
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+
+
